@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+img:hover{
+        transform: scale(1.2);
+    }
+
+<!--       body{-->
+<!--            background-color: #4158D0;-->
+<!--background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);-->
+<!--background-repeat: no-repeat;-->
+<!--background-size: 100% 800px;-->
+<!--background-attachment: fixed;-->
+<!--        }-->
+</style>
+<body bgcolor="yellowgreen">
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<!--<table border="1" >-->
+<!--    <tr>-->
+<!--        <th>item name</th>-->
+<!--        <th>image</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>{{nm}}</td>-->
+<!--        <td><img src="{% static img %}" height="100px" width="100px"></td>-->
+
+<!--    </tr>-->
+<!--</table>-->
+
+  <div style="width:300px;height:200px;margin-left:200px;margin-top:60px">
+      <h1 style="color:white">Details of {{nm}}</h1>
+
+    <img src="{% static img %}" height="320px" width="400px">
+            <h3><b>Rs.{{pr}}</b></h3>
+
+<!--      <h4><b>{{nm}}</b></h4>-->
+
+  </div>
+  <div style="margin-left:650px;margin-top:-100px;width:400px;height:200px">
+      <h3><b>Product Name:{{nm}}</b></h3>
+
+      <h3><b>Product Id:{{pid}}</b></h3>
+      <h3 align="justify"><b>Description:{{des}}</b></h3>
+<!--          <a href="http://127.0.0.1:8000/newapp/buynow/{{nm}}" style="margin-top:-5px;height:40px;width:120px;" class="btn btn-primary">Buy Now</a>-->
+
+  </div>
+</form>
+</body>
+</html>

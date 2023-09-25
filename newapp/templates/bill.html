@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+<!--<div id="data">-->
+     <label>Username:</label> <input style="width:190px;height:30px;margin-top:10px;" type="text" name="uname" value="{{a.uname}}"><br>
+   <label>Phone:</label> <input style="width:190px;height:30px;margin-top:10px;margin-left:25px" type="number" name="phone" value="{{a.phone}}" ><br>
+<!--   <label>Address:</label><input style="width:190px;height:30px;margin-top:10px;margin-left:25px" type="text" name="address" value="{{y.address}}"><br>-->
+    <label>Address:</label><input type="text" style="width:190px;height:50px;margin-top:10px;margin-left:18px" name="address" value="{{a.address}}"> </input>  <br>
+   <label>Price:</label> <input style="width:190px;height:30px;margin-top:10px;margin-left:34px" type="number" name="price" value="{{a.price}}"><br>
+       <label>Quantity:</label> <input style="width:190px;height:30px;margin-top:10px;margin-left:10px" type="number" name="quantity" value="{{pp}}"><br><br>
+<!--</div>-->
+    <input style="width:190px;height:30px;margin-top:10px;background-color:green" type="submit">
+
+</form>
+
+</body>
+</html>

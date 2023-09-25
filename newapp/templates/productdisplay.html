@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<script src="https://kit.fontawesome.com/9d34d7eb05.js" crossorigin="anonymous"></script>
+<head>
+    <style>
+        img:hover{
+        transform: scale(1.2);
+    }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+function myFunction() {
+<!--  // Declare variables-->
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');//search box
+  filter = input.value.toUpperCase();//convert any case of string to uppercase
+  ul = document.getElementById("myUL");//parent division
+  li = ul.getElementsByTagName('div');//to get each elements with corresponding tag name,,,child div
+
+<!--  // Loop through all list items, and hide those who don't match the search query-->
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("h5")[0];//[h1]--->h1
+    txtValue = a.textContent || a.innerText;//select complete text or he inner text content
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+    </script>
+</head><script src="https://kit.fontawesome.com/9d34d7eb05.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/9d34d7eb05.js" crossorigin="anonymous"></script>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color:green;height:80px;width:100%" ><h4><i><b>VeGGieS</b></i></h4>
+          <img src="{% static 'logo.png' %}" style="width: 60px;height: 70px;margin-left: 5px;margin-right: 10px;border-radius:40%">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" style="color:black;margin-top: 5px;" aria-current="page" href="http://127.0.0.1:8000/newapp/index/"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <b><a class="nav-link" style="color:whitesmoke;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/productupload/">Product upload</a></b>
+              </li>
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" style="color:black;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/userlogin/"><b>User Login</b></a>-->
+<!--              </li>-->
+<!--                <li class="nav-item">-->
+<!--                <a class="nav-link" style="color:black;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/adminlogin/"><b>Admin Login</b></a>-->
+<!--              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" style="color:black;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/about/"><b>About us</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:white;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/contact/"><b>Contact us</b></a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" style="color:black;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/adminlogout/"><b>Admin logout</b></a>
+              </li>
+<!--              <form class="d-flex">-->
+<!--                <input class="form-control me-2" type="search" style="margin-left: 400px" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit"><b>Search</b></button>-->
+<!--              </form>-->
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+ <h2 style="color:maroon" align="center"><i><u><b>Available Products</b></u></i></h2><br>
+ <br><label><b>Search Here</b></label>
+<input style="height:30px" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by products...">
+<br>
+<div >
+<div class="row mt-2" id="myUL" >
+    {% for i,j,k,l,m in list %}
+    <div class="col-lg-3 col-md-6 col-sm-12">
+    <div class="card" style="width: 320px;height:400px;border-radius:20px;border:solid grey;margin-left:5px">
+  <img style="width:240px;height;70px;" src="{% static l %}" class="card-img-top" alt="...">
+  <div class="card-body mt-2">
+      <h5 style="margin-top:-15px;"class="card-title"><b>{{i}}</b></h5>
+      <p style="margin-top:-10px;" class="card-text"><b>Rs.{{j}}</b></p>
+    <p align="justify" style="margin-top:-15px;" class="card-text">{{k}}</p>
+<!--    <a href="#" style="margin-top:-5px;height:40px;width:120px;" class="btn btn-primary">Add to cart</a>-->
+      <a href="http://127.0.0.1:8000/newapp/productdelete/{{m}}" class="btn btn-danger">Delete</a>
+<a href="http://127.0.0.1:8000/newapp/productedit/{{m}}" class="btn btn-success">Edit</a>
+  </div>
+</div><br>
+</div>
+    {% endfor %}
+</div></div>
+<br><br>
+<div class="footer">
+
+	<div class="main-data-container" style="height:200px;width:600px">
+
+		<div class="contact-section">
+			<div class="logo-section">
+          <img src="{% static 'logo.png' %}" style="width: 50px;height: 60px;margin-left: 5px;margin-right: 10px;border-radius:40%">
+                <div class="logo-text" style="color:green;font-size:25px;margin-top:-50px;margin-left:80px"><b>VeGGieS</b></div>
+			</div>
+            <br>
+			<div class="description" style="text-align:justify">
+		 VeGGieS is the perfect solution to meet the nutritional needs of the urban citizen who’s always on the go. Order vegetables online- Easy, Fast & Fresh!.
+ We connect the rural farmers to urban consumers.<br>
+                <b>What are the benefits of eating vegetables daily?</b>
+                    It’s a rather well-known fact that including fresh vegetables in your daily diet has its own range of benefits. Vegetables contain a wide range of essential nutrients that are important for carrying out daily bodily functions.
+			</div>
+
+</div>		</div>
+
+		<div class="links-section">
+
+			<div style="height:100px;width:200px;margin-top:-190px;margin-left:800px">
+				<div class="heading"><h4 style="color:blue"><b>Get To Know Us</b></h4></div>
+				<div class="inner-box">
+                        <div class="item" style="text-decoration: none;"><i><h5 style="text-decoration: none;">					<a href="http://127.0.0.1:8000/newapp/about/"><i class="fa-solid fa-circle-info"></i></a>
+About Us</h5></i>
+                        </div>
+                    </div></div>
+<br><br>
+            <div style="height:280px;width:100%;margin-left:2px;color:yellow;background-color:grey;margin-top:100px"><h3><b><i>Contact us</i></b></h3>
+
+<div style="margin-top: 20px;margin-left:90px">
+     <h5 style="color: blue;"><i class="fa-solid fa-phone fa-1x"style="color: red;"></i> Call Us</h5>
+    <p style="color:black"> 8301838227<br>
+        9544695541</p>
+</div>
+<div style="margin-top: -95px;margin-left:350px">
+    <h5 style="color: red;"> <i class="fa-solid fa-envelope" style="color: blue;"></i> Mail Us</h5>
+  <p style="color:black"> VeGGieSorg@gmail.com</p>
+</div>
+<div style="margin-top: -70px;margin-left:590px">
+      <h5 style="color: blue;"><i class="fa-brands fa-square-whatsapp"style="color: red;"></i> Whatsapp</h5>
+    <p style="color:black">9544695541</p>
+</div>
+<div style="margin-top: -70px;margin-left:790px">
+    <h5 style="color: red;"><i class="fa-brands fa-square-instagram" style="color: blue;"></i></i> Instagram</h5>
+    <p style="color:black">VeGGieS Organic Vegetables</p>
+</div>
+                <div style="margin-top: -70px;margin-left:990px">          <img src="{% static 'logo.png' %}" style="width: 80px;height: 70px;margin-left: 190px;margin-right: 10px;border-radius:40%">
+                </div>            <h4 style="margin-left:400px;color:green;margin-top:50px"><i><u>Free, Doorstep delivery all over Kerala</u></i></h4><br>
+
+</div>
+
+
+
+
+	</div>
+</div>
+</body>
+</html>

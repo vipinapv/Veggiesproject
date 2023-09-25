@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+           body{
+            background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+background-repeat: no-repeat;
+background-size: 100% 800px;
+background-attachment: fixed;
+        }
+</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height:200px;width:600px;margin-left:450px;margin-top:50px;">
+<h1> Enter User Details</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+       <label>Username:</label> <input style="width:190px;height:30px;margin-top:10px;" type="text" name="uname" placeholder="Enter username"><br>
+   <label>Phone:</label> <input style="width:190px;height:30px;margin-top:10px;margin-left:25px" type="number" name="phone" placeholder="Enter phone" ><br>
+<!--   <label>Address:</label><input style="width:190px;height:30px;margin-top:10px;margin-left:25px" type="text" name="address" value="{{y.address}}"><br>-->
+    <label>Address:</label><textarea style="width:190px;height:50px;margin-top:10px;margin-left:18px" name="address" placeholder="Enter Address"> </textarea>  <br>
+   <label>Price:</label> <input style="width:190px;height:30px;margin-top:10px;margin-left:34px" type="number" name="price" value="{{x.price}}"><br>
+<!--       <label>Quantity:</label> <input style="width:190px;height:30px;margin-top:10px;margin-left:10px" type="number" name="quantity" value="{{x.quantity}}"><br>-->
+    <label>Payment mode:</label><br>
+            <input style="margin-left:100px;color:white;" type="radio" name="mode" value="Paytm">Paytm<br>
+            <input style="margin-left:100px;font-color:white;" type="radio" name="mode" value="GPay">GPay<br>
+                <input style="margin-left:100px;font-color:white;" type="radio" name="mode" value="Cash on delivery">Cash on delivery<br>
+
+<br><br>
+<!--    <input type="checkbox" name="option1">Paytm-->
+<!--    <input type="checkbox" name="option2">GPay-->
+<!--    <input type="checkbox" name="option3">Cash on Delivery<br><br>-->
+
+    <input style="width:190px;height:30px;margin-top:10px;background-color:green" type="submit">
+</form>
+</div>
+</body>
+</html>

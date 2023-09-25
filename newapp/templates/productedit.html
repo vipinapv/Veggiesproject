@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+               body{
+            background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+background-repeat: no-repeat;
+background-size: 100% 800px;
+background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="orange">
+<div style="margin-left:400px;height:500px;width:400px">
+<h1>Edit Product details</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+ <label><b>Product name:</b></label> <input style="width:200px;height:30px;background-color:pink;margin-left:43px;" type="text" name="productname" value="{{a.productname}}"><br>
+   <label><b>Product id:</b></label>    <input style="width:200px;height:30px;background-color:pink;margin-left:67px" type="text" name="productid" value="{{a.productid}}"><br>
+
+     <label><b>Product price:</b></label>  <input style="width:200px;height:30px;background-color:pink;margin-left:45px" type="number" name="price" value="{{a.price}}"><br>
+ <label><b>Product description:</b></label>  <input style="width:200px;height:50px;background-color:pink;margin-left:3px" type="text" name="description" value="{{a.description}}"><br>
+
+  <label><b>Product image:</b></label>   <img style="margin-left:30px" src="{% static img %}" height="200px" width="250px"><br>
+  <input style="margin-left:80px"  type="file" name="file"><br><br>
+  <input style="width:100px;height:30px;background-color:pink;margin-left:80px" type="submit" value="Update">
+</form></div>
+</body>
+</html>

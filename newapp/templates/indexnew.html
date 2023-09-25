@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+    background-image:url({% static 'bb.jpg' %});
+    background-size:100% 750px;
+    }
+</style>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/9d34d7eb05.js" crossorigin="anonymous"></script>
+<body bgcolor="orange">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color:orange;height:80px;" ><h4><i><b>VeGGieS</b></i></h4>
+          <img src="{% static 'veg2.jpg' %}" style="width: 60px;height: 70px;margin-left: 5px;margin-right: 10px;border-radius:40%">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" style="color:black;margin-top: 5px;" aria-current="page" href="file:///C:/Users/dell/Desktop/bootstrap%20programs/home.html"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <b><a class="nav-link" style="color:whitesmoke;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/registration/">Register</a></b>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:black;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/userlogin/"><b>Login</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:white;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/about/"><b>About us</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:black;margin-top: 5px;" href="http://127.0.0.1:8000/newapp/contact/"><b>Contact us</b></a>
+              </li>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" style="margin-left: 400px" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><b>Search</b></button>
+              </form>
+              <li class="nav-item">
+                <a class="nav-link" style="color:white;margin-top: 5px;margin-left: 10px;" href="http://127.0.0.1:8000/newapp/logout/"><b>Logout</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<div style="height:400px;width:400px;background-color:grey;margin-left:100px;margin-top:100px;">
+      <p align="center">File: {% static img %}}</p></h4><br>
+
+   <h4> <p align="center" style="margin-top:100px;">Product name: {{a.productname}}</p>
+    <p align="center">Product Id: {{a.productid}}</p>
+           <p align="center">Price: {{a.price}}</p>
+
+    <p align="center">Description: {{a.description}}</p>
+    <a href="http://127.0.0.1:8000/newapp/editdetails/{{a.id}}" class="btn btn-success" style="margin-left:150px;">Edit</a>
+<!--    <a href="http://127.0.0.1:8000/newapp/logout/" class="btn btn-success" style="margin-left:150px;">Logout</a>-->
+
+   </h4>
+</div>
+
+<!--<div style="height:220px;width:200px;margin-top:-500px;margin-left:1020px;">-->
+<!--<img style="height:180px;width:150px;border-radius:20%" src="{% static img %}">-->
+<!--    <br>-->
+<!--    <a href="http://127.0.0.1:8000/bankapp/editimage/{{a.id}}" ><i class="fa-solid fa-pen-to-square fa-2x" style="margin-left:120px"></i></a>-->
+<!--</i>-->
+<!--    <br>-->
+<!--    <h5><p>User name: {{a.un}}</p>-->
+<!--        <p>Ac no: {{a.acnumber}}</p></h5>-->
+<!--        <a href="http://127.0.0.1:8000/bankapp/ministmt/{{a.id}}" ><button style="height:50px;width:200px;" class="btn btn-success" type="button" >Mini statement</button> </a><br>-->
+<!--        <a href="http://127.0.0.1:8000/bankapp/newsdisplay/" ><button style="height:50px;width:200px;margin-top:10px" class="btn btn-info" type="button" >Show newsfeed</button> </a>-->
+<!--        <a href="http://127.0.0.1:8000/bankapp/logout/" ><button style="height:50px;width:200px;margin-top:100px;margin-left:50px" class="btn btn-primary" type="button" >Logout</button> </a>-->
+<!--&lt;!&ndash;            <a href="http://127.0.0.1:8000/bankapp/change/{{a.id}}" class="btn btn-success">change password?</a>&ndash;&gt;-->
+
+
+<!--</div>-->
+</body>
+</html>

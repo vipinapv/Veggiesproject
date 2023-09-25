@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<head>
+    <script>
+
+function myFunction() {
+<!--  // Declare variables-->
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');//search box
+  filter = input.value.toUpperCase();//convert any case of string to uppercase
+  ul = document.getElementById("myUL");//parent division
+  li = ul.getElementsByTagName('div');//to get each elements with corresponding tag name,,,child div
+
+<!--  // Loop through all list items, and hide those who don't match the search query-->
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("h1")[0];//[h1]--->h1
+    txtValue = a.textContent || a.innerText;//select complete text or he inner text content
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+<style>
+       body{
+            background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+background-repeat: no-repeat;
+background-size: 100% 800px;
+background-attachment: fixed;
+        }
+
+</style>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<script src="https://kit.fontawesome.com/9d34d7eb05.js" crossorigin="anonymous"></script>
+<body bgcolor="yellowgreen">
+<h1>Your cart...</h1>
+<br>
+<br><label><b>Search Here</b></label>
+<input style="height:30px" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by products...">
+<br><br>
+<div id="myUL">
+{% for i in b %}
+{% if i.uid == id %}
+<div  style="height:190px;width:900px;border:solid black 1px;margin-top:5px;margin-left:10px">
+
+
+    <img style="width:100px;height:80px" src="{% static 'logo.png' %}">
+           <h1 style="margin-left:140px;margin-top:-80px;font-size:18px"><b>{{i.productname}}</b></h1>
+
+    <p style="margin-left:140px;margin-top:-6px;"> {{i.productdescription}}</p><br>
+    <p style="margin-left:140px;margin-top:-6px;"><b>Rs.{{i.price}}</b></p>
+
+        {{i.date}}
+              <a href="http://127.0.0.1:8000/newapp/buynow/{{i.id}}" style="margin-left:420px;height:40px;width:120px;" class="btn btn-primary">Buy Now</a>
+
+    <a href="http://127.0.0.1:8000/newapp/cartdelete/{{i.id}}"><button class="btn btn-danger" style="margin-left:650px;margin-top:-70px" type="button">Remove</button></a>
+ </div>
+{% endif %}
+{% endfor %}
+</div>
+</body>
+</html>

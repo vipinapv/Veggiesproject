@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    body{
+    background-image:url({% static 'fff.jpg' %});
+    background-size:100% 750px;
+    }
+</style>
+<body>
+
+<div style="margin-left:50px;">
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        <h1 style="color:white;margin-left:50px;color:yellow"><i>Product upload</i></h1>
+    <tr>
+        <label style="color:white;"><th style="color:white;height:30px;">Product Name</label></th>
+        <th> <input style="height:22px;height:30px;" type="text" name="productname"></th>
+    </tr>
+         <tr>
+        <label ><th style="color:white;">Price</label></th>
+             <th> <input style="height:22px;height:30px;" type="number" name="price"></th>
+    </tr><tr><br>
+        <label><th style="color:white;">Product Id</label></th>
+             <th><input style="height:30px;" type="text" name="productid"></th>
+    </tr><br>
+         <tr>
+        <label><th style="color:white;">Description</label></th>
+             <th><input style="height:50px;" type="text" name="description"></th>
+    </tr><br>
+         <tr>
+        <label><th style="color:white;">Product image</label></th>
+             <th><input type="file" name="file"></th>
+    </tr>
+
+      </table>
+    <input style="height:35px;width:100px;margin-left:150px;background-color:yellow;border-radius:50px 50px;" type="submit">
+</form></div>
+</body>
+</html>

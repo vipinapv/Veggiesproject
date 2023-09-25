@@ -1,0 +1,55 @@
+from django.urls import path
+from .views import *
+
+urlpatterns=[
+
+path('registration/',registration),
+path('userlogin/',login),
+    path('loginfailed/',loginfailed),
+    path('profile/',profile),
+    path('users/',users),
+    path('adminlogin/',adminlogin),
+    path('adminpage/', adminpage),
+
+    path('productupload/',productupload),
+    path('productdisplay/', productdisplay),
+    path('productdelete/<int:id>', productdelete),
+    path('productedit/<int:id>', productedit),
+    path('useredit/<int:id>', useredit),
+
+    path('index/',index),
+    path('indexnew/', indexnew),
+    path('contact/', contact),
+    path('about/',about),
+    path('logoutuser/',logoutmain),
+    path('userdisplay/', userdisplay),
+    path('adminlogout/', logoutadmin),
+    path('onion/',onion),
+    path('chilly/', chilly),
+    path('potato/', potato),
+    path('cabbage/',cabbage),
+    path('leaves/',leaves),
+    path('brinjal/',brinjal),
+    path('payar/',payar),
+    path('others/',others),
+path('cartlist/<int:id>',cart1),
+    path('cartdisplay/',cartdisplay),
+path('cartdelete/<int:id>',cartdelete),
+    path('forgot/',forgotpassword),
+    path('change/<int:id>',change),
+    path('filedisplay/', filedisplay.as_view(), name='filedisplay'),
+    path('fileview/<pk>', fileview.as_view(), name='fileview'),
+    path('displaybill/',displaybill),
+
+    path('buynow/<int:id>',buyfunction),
+    path('order/',order),
+    path('alreadyuser/',alreadyuser),
+    path('alreadyproduct/', alreadyproduct),
+    path('alreadycart/', alreadycart),
+    path('checkemail/',checkemail),
+    path('checkerror/',checkerror),
+    path('changed/',changed),
+    path('bill/<int:id>',bill),
+    path('confirm/',confirm),
+
+]
